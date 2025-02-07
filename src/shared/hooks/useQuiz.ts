@@ -1,6 +1,21 @@
 import { useState, useEffect } from "react";
 
-const useQuiz = (selectedExam: { questions: any[] }) => {
+interface Question {
+  id: number;
+  text?: string;
+  options: string[];
+  answers: string[];
+  multipleCorrect?: boolean;
+}
+
+interface Exam {
+  id: number;
+  title: string;
+  description: string;
+  questions: Question[];
+}
+
+const useQuiz = (selectedExam: Exam) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [score, setScore] = useState(0);
@@ -58,7 +73,18 @@ const useQuiz = (selectedExam: { questions: any[] }) => {
     else setShowModal(true);
   };
 
-  return { currentQuestion, selectedAnswers, score, showExplanation, showModal, timeUp, setTimeUp, checkAnswer, nextQuestion, handleAnswerClick };
+  return { 
+    currentQuestion, 
+    selectedAnswers, 
+    score, 
+    showExplanation, 
+    showModal, 
+    timeUp, 
+    setTimeUp, 
+    checkAnswer, 
+    nextQuestion, 
+    handleAnswerClick 
+  };
 };
 
 export default useQuiz;

@@ -15,7 +15,7 @@ interface ExamHistory {
 }
 
 const UserDashboard = () => {
-  const { user, logout, loading } = useAuth();
+  const { user, loading } = useAuth();
   const router = useRouter();
   const [userHistory, setUserHistory] = useState<ExamHistory[]>([]);
 

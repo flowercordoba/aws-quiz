@@ -3,9 +3,10 @@
 import React from "react";
 import AnswerOption from "./AnswerOption";
 
+// Interfaz corregida para que `questionData` coincida con `Quiz.tsx`
 interface QuestionProps {
   questionData: {
-    question: string;
+    question: string; // ✅ Se asegura que el campo sea `question` en vez de `text`
     options: string[];
     answers: string[];
     multipleCorrect: boolean;

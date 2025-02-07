@@ -1,14 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Suspense, useState } from "react";
 import { useAuth } from "@/shared/hooks/useAuth";
 import { useSearchParams, useRouter } from "next/navigation";
 
 const LoginPage = () => {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <LoginContent />
+    </Suspense>
+  );
+};
+
+const LoginContent = () => {
   const { login } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectUrl = searchParams.get("redirect"); // 🔥 Leer la URL a la que debe redirigir después del login
+  const redirectUrl = searchParams.get("redirect") || "/dashboard"; // 🔥 Si no hay `redirect`, redirige al Dashboard
 
   const [email, setEmail] = useState("user@example.com");
   const [password, setPassword] = useState("user123");
@@ -18,7 +26,7 @@ const LoginPage = () => {
     e.preventDefault();
     const success = login(email, password);
     if (success) {
-      router.push(redirectUrl || "/dashboard"); // 🔥 Si hay `redirectUrl`, redirigir ahí después del login
+      router.push(redirectUrl); // 🔥 Redirige al usuario después del login
     } else {
       setError("Credenciales incorrectas");
     }
