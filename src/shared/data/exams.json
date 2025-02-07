@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Machine Learning",
+      "description": "Prueba sobre fundamentos de ML",
+      "questionsCount": 10
+    },
+    {
+      "id": 2,
+      "title": "AWS AI Services",
+      "description": "Examen sobre los servicios de IA en AWS",
+      "questionsCount": 15
+    },
+    {
+      "id": 3,
+      "title": "Deep Learning",
+      "description": "Conceptos clave en redes neuronales",
+      "questionsCount": 12
+    },
+    {
+      "id": 4,
+      "title": "Deep Learning",
+      "description": "Conceptos clave en redes neuronales",
+      "questionsCount": 12
+    }
+  ]
+  

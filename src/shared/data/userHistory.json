@@ -1,0 +1,17 @@
+[
+    {
+      "userId": 2,
+      "examId": 1,
+      "examTitle": "Machine Learning",
+      "score": 8,
+      "totalQuestions": 10
+    },
+    {
+      "userId": 2,
+      "examId": 2,
+      "examTitle": "AWS AI Services",
+      "score": 12,
+      "totalQuestions": 15
+    }
+  ]
+  
